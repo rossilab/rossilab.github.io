@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <h1 id="isnap-integrated-single-cell-data-navigation-portal">ISNAP: Integrated Single-cell data NAvigation Portal</h1>
+    <h3 id="what-is-the-purpose-of-isnap-">What is the purpose of ISNAP?</h3>
+    <ul>
+    <li><p>&quot;Snappy&quot; and flexible platform to publish biological data</p>
+    <ul>
+    <li>Can be adapted for most R bioinformatic workflows</li>
+    </ul>
+    </li>
+    <li><p>Improve readership and increase credibility for research publications</p>
+    <ul>
+    <li>Present and publish biological data in organized layout (interactive)</li>
+    </ul>
+    </li>
+    <li><p>Modular framework allows user to customize the interface</p>
+    </li>
+    <li><p>Open source and free to be modified</p>
+    </li>
+    </ul>
+    <h3 id="what-can-isnap-do-right-now-">What can ISNAP do right now?</h3>
+    <ul>
+    <li>View <a href="https://github.com/aertslab/SCENIC">SCENIC</a> data through an interactive portal</li>
+    </ul>
+    <h3 id="what-are-the-future-plans-for-isnap-">What are the future plans for ISNAP?</h3>
+    <ul>
+    <li><p>Seurat implementation is still in progress (improvements to plot rendering speed using R object)</p>
+    </li>
+    <li><p>Integrate Velocyto (RNA velocity), bulk RNA-Seq, and other bioinformatic workflow data together to provide a richer biological image of lab data</p>
+    </li>
+    <li><p>Ability to not only view and navigate through data but also run complete analyses</p>
+    </li>
+    </ul>
+    <h3 id="dependencies">Dependencies</h3>
+    <ul>
+    <li><a href="https://github.com/rstudio/shiny">Shiny</a></li>
+    <li><a href="https://www.tidyverse.org/">Tidyverse</a></li>
+    <li><a href="https://rstudio.github.io/shinydashboard/">shinydashboard</a></li>
+    <li><a href="https://rstudio.github.io/shinythemes/">Shiny Themes</a></li>
+    <li><a href="https://github.com/satijalab/seurat">Seurat</a></li>
+    <li><a href="https://github.com/rstudio/reticulate">reticulate</a></li>
+    </ul>
+    <p>Installation:</p>
+    <pre><code>packages = c(<span class="hljs-string">"shiny"</span>, <span class="hljs-string">"tidyverse"</span>, <span class="hljs-string">"shinydashboard"</span>,
+                 <span class="hljs-string">"shinythemes"</span>, <span class="hljs-string">"Seurat"</span>, <span class="hljs-string">"reticulate"</span>)
+    
+    package.check &lt;- lapply(
+      packages,
+      FUN = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(x)</span> </span>{
+        <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">require</span>(x, character.only = <span class="hljs-keyword">TRUE</span>)) {
+          install.packages(x, dependencies = <span class="hljs-keyword">TRUE</span>)
+          library(x, character.only = <span class="hljs-keyword">TRUE</span>)
+        }
+      }
+    )
+    </code></pre>
+</html>
